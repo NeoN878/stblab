@@ -1,0 +1,735 @@
+From 8d0998cb3a71f71d3afc1a6060425511d40b3fdb Mon Sep 17 00:00:00 2001
+From: bharathraj0643 <bharathraj0643@gmail.com>
+Date: Sun, 15 Nov 2026 18:57:39 +0530
+Subject: [PATCH 1/7] method1 folder
+
+---
+ .../.editorconfig                             |   0
+ method-1_laptop/.gitignore                    |  27 ++++++++++++++++++
+ .../.vscode}/settings.json                    |   0
+ LICENSE => method-1_laptop/LICENSE            |   0
+ README.md => method-1_laptop/README.md        |   0
+ StbLab.slnx => method-1_laptop/StbLab.slnx    |   0
+ .../assets}/favorites.png                     | Bin
+ {assets => method-1_laptop/assets}/logo.png   | Bin
+ {assets => method-1_laptop/assets}/logo.svg   |   0
+ {assets => method-1_laptop/assets}/picker.png | Bin
+ .../assets}/screenshot.png                    | Bin
+ .../assets}/set_channels.png                  | Bin
+ ogREADME.md => method-1_laptop/ogREADME.md    |   0
+ {proto => method-1_laptop/proto}/polo.proto   |   0
+ .../proto}/remotemessage.proto                |   0
+ .../.local/share/NuGet/Migrations/1           |   0
+ .../StbLab.Api/Configuration/StbOptions.cs    |   0
+ .../Controllers/ChannelsController.cs         |   0
+ .../Controllers/GenresController.cs           |   0
+ .../Controllers/HealthController.cs           |   0
+ .../Controllers/RemoteController.cs           |   0
+ .../StbLab.Api/DTOs/Channels/ChannelDtos.cs   |   0
+ .../DTOs/Diagnostics/HealthResponse.cs        |   0
+ .../StbLab.Api/DTOs/Remote/DeviceResponse.cs  |   0
+ .../DTOs/Remote/KeyAcknowledgment.cs          |   0
+ .../src}/StbLab.Api/DTOs/Remote/KeyRequest.cs |   0
+ .../DTOs/Remote/LaunchAcknowledgment.cs       |   0
+ .../StbLab.Api/DTOs/Remote/LaunchRequest.cs   |   0
+ .../StbLab.Api/DTOs/Remote/StateResponse.cs   |   0
+ .../DTOs/Remote/TextAcknowledgment.cs         |   0
+ .../StbLab.Api/DTOs/Remote/TextRequest.cs     |   0
+ .../StbLab.Api/DTOs/Remote/TuneRequest.cs     |   0
+ .../StbLab.Api/DTOs/Remote/VolumeResponse.cs  |   0
+ .../StbLab.Api/Database/ChannelRepository.cs  |   0
+ .../src}/StbLab.Api/Database/DbInitializer.cs |   0
+ .../Exceptions/GlobalExceptionHandler.cs      |   0
+ .../StbLab.Api/Exceptions/StbException.cs     |   0
+ .../Exceptions/StbNotPairedException.cs       |   0
+ .../Exceptions/StbUnreachableException.cs     |   0
+ .../Exceptions/UnknownDirectionException.cs   |   0
+ .../Exceptions/UnknownKeyException.cs         |   0
+ .../ApiServiceCollectionExtensions.cs         |   0
+ .../StbServiceCollectionExtensions.cs         |   0
+ .../Extensions/WebApplicationExtensions.cs    |   0
+ .../src}/StbLab.Api/Models/Channel.cs         |   0
+ .../src}/StbLab.Api/Models/Genre.cs           |   0
+ .../src}/StbLab.Api/Program.cs                |   0
+ .../StbLab.Api/Properties/launchSettings.json |   0
+ .../StbLab.Api/Services/IStbRemoteService.cs  |   0
+ .../src}/StbLab.Api/Services/StbConnection.cs |   0
+ .../StbLab.Api/Services/StbRemoteService.cs   |   0
+ .../src}/StbLab.Api/StbLab.Api.csproj         |   0
+ .../StbLab.Api/appsettings.Development.json   |   0
+ .../src}/StbLab.Api/appsettings.json          |   0
+ .../src}/StbLab.Cli/Program.cs                |   0
+ .../src}/StbLab.Cli/StbLab.Cli.csproj         |   0
+ .../src}/StbLab.Protocol/AppLinks.cs          |   0
+ .../StbLab.Protocol/CertificateFactory.cs     |   0
+ .../src}/StbLab.Protocol/Certificates.cs      |   0
+ .../src}/StbLab.Protocol/Directions.cs        |   0
+ .../src}/StbLab.Protocol/Framing.cs           |   0
+ .../src}/StbLab.Protocol/KeyCodes.cs          |   0
+ .../src}/StbLab.Protocol/PairingClient.cs     |   0
+ .../src}/StbLab.Protocol/RemoteClient.cs      |   0
+ .../StbLab.Protocol/StbLab.Protocol.csproj    |   0
+ .../web}/app/components/EditModal.tsx         |   0
+ .../web}/app/components/VirtualKeypad.tsx     |   0
+ {web => method-1_laptop/web}/app/globals.css  |   0
+ {web => method-1_laptop/web}/app/icon.svg     |   0
+ {web => method-1_laptop/web}/app/layout.tsx   |   0
+ {web => method-1_laptop/web}/app/page.tsx     |   0
+ {web => method-1_laptop/web}/lib/api.ts       |   0
+ {web => method-1_laptop/web}/next.config.ts   |   0
+ .../web}/package-lock.json                    |   0
+ {web => method-1_laptop/web}/package.json     |   0
+ {web => method-1_laptop/web}/tsconfig.json    |   0
+ 76 files changed, 27 insertions(+)
+ rename .editorconfig => method-1_laptop/.editorconfig (100%)
+ create mode 100644 method-1_laptop/.gitignore
+ rename {.vscode => method-1_laptop/.vscode}/settings.json (100%)
+ rename LICENSE => method-1_laptop/LICENSE (100%)
+ rename README.md => method-1_laptop/README.md (100%)
+ rename StbLab.slnx => method-1_laptop/StbLab.slnx (100%)
+ rename {assets => method-1_laptop/assets}/favorites.png (100%)
+ rename {assets => method-1_laptop/assets}/logo.png (100%)
+ rename {assets => method-1_laptop/assets}/logo.svg (100%)
+ rename {assets => method-1_laptop/assets}/picker.png (100%)
+ rename {assets => method-1_laptop/assets}/screenshot.png (100%)
+ rename {assets => method-1_laptop/assets}/set_channels.png (100%)
+ rename ogREADME.md => method-1_laptop/ogREADME.md (100%)
+ rename {proto => method-1_laptop/proto}/polo.proto (100%)
+ rename {proto => method-1_laptop/proto}/remotemessage.proto (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/.local/share/NuGet/Migrations/1 (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Configuration/StbOptions.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Controllers/ChannelsController.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Controllers/GenresController.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Controllers/HealthController.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Controllers/RemoteController.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Channels/ChannelDtos.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Diagnostics/HealthResponse.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/DeviceResponse.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/KeyAcknowledgment.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/KeyRequest.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/LaunchAcknowledgment.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/LaunchRequest.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/StateResponse.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/TextAcknowledgment.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/TextRequest.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/TuneRequest.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/DTOs/Remote/VolumeResponse.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Database/ChannelRepository.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Database/DbInitializer.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Exceptions/GlobalExceptionHandler.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Exceptions/StbException.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Exceptions/StbNotPairedException.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Exceptions/StbUnreachableException.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Exceptions/UnknownDirectionException.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Exceptions/UnknownKeyException.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Extensions/ApiServiceCollectionExtensions.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Extensions/StbServiceCollectionExtensions.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Extensions/WebApplicationExtensions.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Models/Channel.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Models/Genre.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Program.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Properties/launchSettings.json (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Services/IStbRemoteService.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Services/StbConnection.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/Services/StbRemoteService.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/StbLab.Api.csproj (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/appsettings.Development.json (100%)
+ rename {src => method-1_laptop/src}/StbLab.Api/appsettings.json (100%)
+ rename {src => method-1_laptop/src}/StbLab.Cli/Program.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Cli/StbLab.Cli.csproj (100%)
+ rename {src => method-1_laptop/src}/StbLab.Protocol/AppLinks.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Protocol/CertificateFactory.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Protocol/Certificates.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Protocol/Directions.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Protocol/Framing.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Protocol/KeyCodes.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Protocol/PairingClient.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Protocol/RemoteClient.cs (100%)
+ rename {src => method-1_laptop/src}/StbLab.Protocol/StbLab.Protocol.csproj (100%)
+ rename {web => method-1_laptop/web}/app/components/EditModal.tsx (100%)
+ rename {web => method-1_laptop/web}/app/components/VirtualKeypad.tsx (100%)
+ rename {web => method-1_laptop/web}/app/globals.css (100%)
+ rename {web => method-1_laptop/web}/app/icon.svg (100%)
+ rename {web => method-1_laptop/web}/app/layout.tsx (100%)
+ rename {web => method-1_laptop/web}/app/page.tsx (100%)
+ rename {web => method-1_laptop/web}/lib/api.ts (100%)
+ rename {web => method-1_laptop/web}/next.config.ts (100%)
+ rename {web => method-1_laptop/web}/package-lock.json (100%)
+ rename {web => method-1_laptop/web}/package.json (100%)
+ rename {web => method-1_laptop/web}/tsconfig.json (100%)
+
+diff --git a/.editorconfig b/method-1_laptop/.editorconfig
+similarity index 100%
+rename from .editorconfig
+rename to method-1_laptop/.editorconfig
+diff --git a/method-1_laptop/.gitignore b/method-1_laptop/.gitignore
+new file mode 100644
+index 0000000..844a3f2
+--- /dev/null
++++ b/method-1_laptop/.gitignore
+@@ -0,0 +1,27 @@
++# ── .NET ───────────────────────────────────────────────────────────────────────
++bin/
++obj/
++*.user
++*.suo
++.vs/
++publish/
++
++# ── Node / Next.js ─────────────────────────────────────────────────────────────
++node_modules/
++.next/
++out/
++*.tsbuildinfo
++next-env.d.ts
++
++# ── Secrets ────────────────────────────────────────────────────────────────────
++# The pairing certificate and its private key are a durable credential that
++# controls the device. They live outside the repository by default (~/stb-lab),
++# and these patterns are a second line of defence against committing them.
++*.pem
++*.key
++*.pfx
++*.p12
++
++# ── OS ─────────────────────────────────────────────────────────────────────────
++.DS_Store
++Thumbs.db
+diff --git a/.vscode/settings.json b/method-1_laptop/.vscode/settings.json
+similarity index 100%
+rename from .vscode/settings.json
+rename to method-1_laptop/.vscode/settings.json
+diff --git a/LICENSE b/method-1_laptop/LICENSE
+similarity index 100%
+rename from LICENSE
+rename to method-1_laptop/LICENSE
+diff --git a/README.md b/method-1_laptop/README.md
+similarity index 100%
+rename from README.md
+rename to method-1_laptop/README.md
+diff --git a/StbLab.slnx b/method-1_laptop/StbLab.slnx
+similarity index 100%
+rename from StbLab.slnx
+rename to method-1_laptop/StbLab.slnx
+diff --git a/assets/favorites.png b/method-1_laptop/assets/favorites.png
+similarity index 100%
+rename from assets/favorites.png
+rename to method-1_laptop/assets/favorites.png
+diff --git a/assets/logo.png b/method-1_laptop/assets/logo.png
+similarity index 100%
+rename from assets/logo.png
+rename to method-1_laptop/assets/logo.png
+diff --git a/assets/logo.svg b/method-1_laptop/assets/logo.svg
+similarity index 100%
+rename from assets/logo.svg
+rename to method-1_laptop/assets/logo.svg
+diff --git a/assets/picker.png b/method-1_laptop/assets/picker.png
+similarity index 100%
+rename from assets/picker.png
+rename to method-1_laptop/assets/picker.png
+diff --git a/assets/screenshot.png b/method-1_laptop/assets/screenshot.png
+similarity index 100%
+rename from assets/screenshot.png
+rename to method-1_laptop/assets/screenshot.png
+diff --git a/assets/set_channels.png b/method-1_laptop/assets/set_channels.png
+similarity index 100%
+rename from assets/set_channels.png
+rename to method-1_laptop/assets/set_channels.png
+diff --git a/ogREADME.md b/method-1_laptop/ogREADME.md
+similarity index 100%
+rename from ogREADME.md
+rename to method-1_laptop/ogREADME.md
+diff --git a/proto/polo.proto b/method-1_laptop/proto/polo.proto
+similarity index 100%
+rename from proto/polo.proto
+rename to method-1_laptop/proto/polo.proto
+diff --git a/proto/remotemessage.proto b/method-1_laptop/proto/remotemessage.proto
+similarity index 100%
+rename from proto/remotemessage.proto
+rename to method-1_laptop/proto/remotemessage.proto
+diff --git a/src/StbLab.Api/.local/share/NuGet/Migrations/1 b/method-1_laptop/src/StbLab.Api/.local/share/NuGet/Migrations/1
+similarity index 100%
+rename from src/StbLab.Api/.local/share/NuGet/Migrations/1
+rename to method-1_laptop/src/StbLab.Api/.local/share/NuGet/Migrations/1
+diff --git a/src/StbLab.Api/Configuration/StbOptions.cs b/method-1_laptop/src/StbLab.Api/Configuration/StbOptions.cs
+similarity index 100%
+rename from src/StbLab.Api/Configuration/StbOptions.cs
+rename to method-1_laptop/src/StbLab.Api/Configuration/StbOptions.cs
+diff --git a/src/StbLab.Api/Controllers/ChannelsController.cs b/method-1_laptop/src/StbLab.Api/Controllers/ChannelsController.cs
+similarity index 100%
+rename from src/StbLab.Api/Controllers/ChannelsController.cs
+rename to method-1_laptop/src/StbLab.Api/Controllers/ChannelsController.cs
+diff --git a/src/StbLab.Api/Controllers/GenresController.cs b/method-1_laptop/src/StbLab.Api/Controllers/GenresController.cs
+similarity index 100%
+rename from src/StbLab.Api/Controllers/GenresController.cs
+rename to method-1_laptop/src/StbLab.Api/Controllers/GenresController.cs
+diff --git a/src/StbLab.Api/Controllers/HealthController.cs b/method-1_laptop/src/StbLab.Api/Controllers/HealthController.cs
+similarity index 100%
+rename from src/StbLab.Api/Controllers/HealthController.cs
+rename to method-1_laptop/src/StbLab.Api/Controllers/HealthController.cs
+diff --git a/src/StbLab.Api/Controllers/RemoteController.cs b/method-1_laptop/src/StbLab.Api/Controllers/RemoteController.cs
+similarity index 100%
+rename from src/StbLab.Api/Controllers/RemoteController.cs
+rename to method-1_laptop/src/StbLab.Api/Controllers/RemoteController.cs
+diff --git a/src/StbLab.Api/DTOs/Channels/ChannelDtos.cs b/method-1_laptop/src/StbLab.Api/DTOs/Channels/ChannelDtos.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Channels/ChannelDtos.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Channels/ChannelDtos.cs
+diff --git a/src/StbLab.Api/DTOs/Diagnostics/HealthResponse.cs b/method-1_laptop/src/StbLab.Api/DTOs/Diagnostics/HealthResponse.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Diagnostics/HealthResponse.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Diagnostics/HealthResponse.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/DeviceResponse.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/DeviceResponse.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/DeviceResponse.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/DeviceResponse.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/KeyAcknowledgment.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/KeyAcknowledgment.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/KeyAcknowledgment.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/KeyAcknowledgment.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/KeyRequest.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/KeyRequest.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/KeyRequest.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/KeyRequest.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/LaunchAcknowledgment.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/LaunchAcknowledgment.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/LaunchAcknowledgment.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/LaunchAcknowledgment.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/LaunchRequest.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/LaunchRequest.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/LaunchRequest.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/LaunchRequest.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/StateResponse.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/StateResponse.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/StateResponse.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/StateResponse.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/TextAcknowledgment.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/TextAcknowledgment.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/TextAcknowledgment.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/TextAcknowledgment.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/TextRequest.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/TextRequest.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/TextRequest.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/TextRequest.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/TuneRequest.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/TuneRequest.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/TuneRequest.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/TuneRequest.cs
+diff --git a/src/StbLab.Api/DTOs/Remote/VolumeResponse.cs b/method-1_laptop/src/StbLab.Api/DTOs/Remote/VolumeResponse.cs
+similarity index 100%
+rename from src/StbLab.Api/DTOs/Remote/VolumeResponse.cs
+rename to method-1_laptop/src/StbLab.Api/DTOs/Remote/VolumeResponse.cs
+diff --git a/src/StbLab.Api/Database/ChannelRepository.cs b/method-1_laptop/src/StbLab.Api/Database/ChannelRepository.cs
+similarity index 100%
+rename from src/StbLab.Api/Database/ChannelRepository.cs
+rename to method-1_laptop/src/StbLab.Api/Database/ChannelRepository.cs
+diff --git a/src/StbLab.Api/Database/DbInitializer.cs b/method-1_laptop/src/StbLab.Api/Database/DbInitializer.cs
+similarity index 100%
+rename from src/StbLab.Api/Database/DbInitializer.cs
+rename to method-1_laptop/src/StbLab.Api/Database/DbInitializer.cs
+diff --git a/src/StbLab.Api/Exceptions/GlobalExceptionHandler.cs b/method-1_laptop/src/StbLab.Api/Exceptions/GlobalExceptionHandler.cs
+similarity index 100%
+rename from src/StbLab.Api/Exceptions/GlobalExceptionHandler.cs
+rename to method-1_laptop/src/StbLab.Api/Exceptions/GlobalExceptionHandler.cs
+diff --git a/src/StbLab.Api/Exceptions/StbException.cs b/method-1_laptop/src/StbLab.Api/Exceptions/StbException.cs
+similarity index 100%
+rename from src/StbLab.Api/Exceptions/StbException.cs
+rename to method-1_laptop/src/StbLab.Api/Exceptions/StbException.cs
+diff --git a/src/StbLab.Api/Exceptions/StbNotPairedException.cs b/method-1_laptop/src/StbLab.Api/Exceptions/StbNotPairedException.cs
+similarity index 100%
+rename from src/StbLab.Api/Exceptions/StbNotPairedException.cs
+rename to method-1_laptop/src/StbLab.Api/Exceptions/StbNotPairedException.cs
+diff --git a/src/StbLab.Api/Exceptions/StbUnreachableException.cs b/method-1_laptop/src/StbLab.Api/Exceptions/StbUnreachableException.cs
+similarity index 100%
+rename from src/StbLab.Api/Exceptions/StbUnreachableException.cs
+rename to method-1_laptop/src/StbLab.Api/Exceptions/StbUnreachableException.cs
+diff --git a/src/StbLab.Api/Exceptions/UnknownDirectionException.cs b/method-1_laptop/src/StbLab.Api/Exceptions/UnknownDirectionException.cs
+similarity index 100%
+rename from src/StbLab.Api/Exceptions/UnknownDirectionException.cs
+rename to method-1_laptop/src/StbLab.Api/Exceptions/UnknownDirectionException.cs
+diff --git a/src/StbLab.Api/Exceptions/UnknownKeyException.cs b/method-1_laptop/src/StbLab.Api/Exceptions/UnknownKeyException.cs
+similarity index 100%
+rename from src/StbLab.Api/Exceptions/UnknownKeyException.cs
+rename to method-1_laptop/src/StbLab.Api/Exceptions/UnknownKeyException.cs
+diff --git a/src/StbLab.Api/Extensions/ApiServiceCollectionExtensions.cs b/method-1_laptop/src/StbLab.Api/Extensions/ApiServiceCollectionExtensions.cs
+similarity index 100%
+rename from src/StbLab.Api/Extensions/ApiServiceCollectionExtensions.cs
+rename to method-1_laptop/src/StbLab.Api/Extensions/ApiServiceCollectionExtensions.cs
+diff --git a/src/StbLab.Api/Extensions/StbServiceCollectionExtensions.cs b/method-1_laptop/src/StbLab.Api/Extensions/StbServiceCollectionExtensions.cs
+similarity index 100%
+rename from src/StbLab.Api/Extensions/StbServiceCollectionExtensions.cs
+rename to method-1_laptop/src/StbLab.Api/Extensions/StbServiceCollectionExtensions.cs
+diff --git a/src/StbLab.Api/Extensions/WebApplicationExtensions.cs b/method-1_laptop/src/StbLab.Api/Extensions/WebApplicationExtensions.cs
+similarity index 100%
+rename from src/StbLab.Api/Extensions/WebApplicationExtensions.cs
+rename to method-1_laptop/src/StbLab.Api/Extensions/WebApplicationExtensions.cs
+diff --git a/src/StbLab.Api/Models/Channel.cs b/method-1_laptop/src/StbLab.Api/Models/Channel.cs
+similarity index 100%
+rename from src/StbLab.Api/Models/Channel.cs
+rename to method-1_laptop/src/StbLab.Api/Models/Channel.cs
+diff --git a/src/StbLab.Api/Models/Genre.cs b/method-1_laptop/src/StbLab.Api/Models/Genre.cs
+similarity index 100%
+rename from src/StbLab.Api/Models/Genre.cs
+rename to method-1_laptop/src/StbLab.Api/Models/Genre.cs
+diff --git a/src/StbLab.Api/Program.cs b/method-1_laptop/src/StbLab.Api/Program.cs
+similarity index 100%
+rename from src/StbLab.Api/Program.cs
+rename to method-1_laptop/src/StbLab.Api/Program.cs
+diff --git a/src/StbLab.Api/Properties/launchSettings.json b/method-1_laptop/src/StbLab.Api/Properties/launchSettings.json
+similarity index 100%
+rename from src/StbLab.Api/Properties/launchSettings.json
+rename to method-1_laptop/src/StbLab.Api/Properties/launchSettings.json
+diff --git a/src/StbLab.Api/Services/IStbRemoteService.cs b/method-1_laptop/src/StbLab.Api/Services/IStbRemoteService.cs
+similarity index 100%
+rename from src/StbLab.Api/Services/IStbRemoteService.cs
+rename to method-1_laptop/src/StbLab.Api/Services/IStbRemoteService.cs
+diff --git a/src/StbLab.Api/Services/StbConnection.cs b/method-1_laptop/src/StbLab.Api/Services/StbConnection.cs
+similarity index 100%
+rename from src/StbLab.Api/Services/StbConnection.cs
+rename to method-1_laptop/src/StbLab.Api/Services/StbConnection.cs
+diff --git a/src/StbLab.Api/Services/StbRemoteService.cs b/method-1_laptop/src/StbLab.Api/Services/StbRemoteService.cs
+similarity index 100%
+rename from src/StbLab.Api/Services/StbRemoteService.cs
+rename to method-1_laptop/src/StbLab.Api/Services/StbRemoteService.cs
+diff --git a/src/StbLab.Api/StbLab.Api.csproj b/method-1_laptop/src/StbLab.Api/StbLab.Api.csproj
+similarity index 100%
+rename from src/StbLab.Api/StbLab.Api.csproj
+rename to method-1_laptop/src/StbLab.Api/StbLab.Api.csproj
+diff --git a/src/StbLab.Api/appsettings.Development.json b/method-1_laptop/src/StbLab.Api/appsettings.Development.json
+similarity index 100%
+rename from src/StbLab.Api/appsettings.Development.json
+rename to method-1_laptop/src/StbLab.Api/appsettings.Development.json
+diff --git a/src/StbLab.Api/appsettings.json b/method-1_laptop/src/StbLab.Api/appsettings.json
+similarity index 100%
+rename from src/StbLab.Api/appsettings.json
+rename to method-1_laptop/src/StbLab.Api/appsettings.json
+diff --git a/src/StbLab.Cli/Program.cs b/method-1_laptop/src/StbLab.Cli/Program.cs
+similarity index 100%
+rename from src/StbLab.Cli/Program.cs
+rename to method-1_laptop/src/StbLab.Cli/Program.cs
+diff --git a/src/StbLab.Cli/StbLab.Cli.csproj b/method-1_laptop/src/StbLab.Cli/StbLab.Cli.csproj
+similarity index 100%
+rename from src/StbLab.Cli/StbLab.Cli.csproj
+rename to method-1_laptop/src/StbLab.Cli/StbLab.Cli.csproj
+diff --git a/src/StbLab.Protocol/AppLinks.cs b/method-1_laptop/src/StbLab.Protocol/AppLinks.cs
+similarity index 100%
+rename from src/StbLab.Protocol/AppLinks.cs
+rename to method-1_laptop/src/StbLab.Protocol/AppLinks.cs
+diff --git a/src/StbLab.Protocol/CertificateFactory.cs b/method-1_laptop/src/StbLab.Protocol/CertificateFactory.cs
+similarity index 100%
+rename from src/StbLab.Protocol/CertificateFactory.cs
+rename to method-1_laptop/src/StbLab.Protocol/CertificateFactory.cs
+diff --git a/src/StbLab.Protocol/Certificates.cs b/method-1_laptop/src/StbLab.Protocol/Certificates.cs
+similarity index 100%
+rename from src/StbLab.Protocol/Certificates.cs
+rename to method-1_laptop/src/StbLab.Protocol/Certificates.cs
+diff --git a/src/StbLab.Protocol/Directions.cs b/method-1_laptop/src/StbLab.Protocol/Directions.cs
+similarity index 100%
+rename from src/StbLab.Protocol/Directions.cs
+rename to method-1_laptop/src/StbLab.Protocol/Directions.cs
+diff --git a/src/StbLab.Protocol/Framing.cs b/method-1_laptop/src/StbLab.Protocol/Framing.cs
+similarity index 100%
+rename from src/StbLab.Protocol/Framing.cs
+rename to method-1_laptop/src/StbLab.Protocol/Framing.cs
+diff --git a/src/StbLab.Protocol/KeyCodes.cs b/method-1_laptop/src/StbLab.Protocol/KeyCodes.cs
+similarity index 100%
+rename from src/StbLab.Protocol/KeyCodes.cs
+rename to method-1_laptop/src/StbLab.Protocol/KeyCodes.cs
+diff --git a/src/StbLab.Protocol/PairingClient.cs b/method-1_laptop/src/StbLab.Protocol/PairingClient.cs
+similarity index 100%
+rename from src/StbLab.Protocol/PairingClient.cs
+rename to method-1_laptop/src/StbLab.Protocol/PairingClient.cs
+diff --git a/src/StbLab.Protocol/RemoteClient.cs b/method-1_laptop/src/StbLab.Protocol/RemoteClient.cs
+similarity index 100%
+rename from src/StbLab.Protocol/RemoteClient.cs
+rename to method-1_laptop/src/StbLab.Protocol/RemoteClient.cs
+diff --git a/src/StbLab.Protocol/StbLab.Protocol.csproj b/method-1_laptop/src/StbLab.Protocol/StbLab.Protocol.csproj
+similarity index 100%
+rename from src/StbLab.Protocol/StbLab.Protocol.csproj
+rename to method-1_laptop/src/StbLab.Protocol/StbLab.Protocol.csproj
+diff --git a/web/app/components/EditModal.tsx b/method-1_laptop/web/app/components/EditModal.tsx
+similarity index 100%
+rename from web/app/components/EditModal.tsx
+rename to method-1_laptop/web/app/components/EditModal.tsx
+diff --git a/web/app/components/VirtualKeypad.tsx b/method-1_laptop/web/app/components/VirtualKeypad.tsx
+similarity index 100%
+rename from web/app/components/VirtualKeypad.tsx
+rename to method-1_laptop/web/app/components/VirtualKeypad.tsx
+diff --git a/web/app/globals.css b/method-1_laptop/web/app/globals.css
+similarity index 100%
+rename from web/app/globals.css
+rename to method-1_laptop/web/app/globals.css
+diff --git a/web/app/icon.svg b/method-1_laptop/web/app/icon.svg
+similarity index 100%
+rename from web/app/icon.svg
+rename to method-1_laptop/web/app/icon.svg
+diff --git a/web/app/layout.tsx b/method-1_laptop/web/app/layout.tsx
+similarity index 100%
+rename from web/app/layout.tsx
+rename to method-1_laptop/web/app/layout.tsx
+diff --git a/web/app/page.tsx b/method-1_laptop/web/app/page.tsx
+similarity index 100%
+rename from web/app/page.tsx
+rename to method-1_laptop/web/app/page.tsx
+diff --git a/web/lib/api.ts b/method-1_laptop/web/lib/api.ts
+similarity index 100%
+rename from web/lib/api.ts
+rename to method-1_laptop/web/lib/api.ts
+diff --git a/web/next.config.ts b/method-1_laptop/web/next.config.ts
+similarity index 100%
+rename from web/next.config.ts
+rename to method-1_laptop/web/next.config.ts
+diff --git a/web/package-lock.json b/method-1_laptop/web/package-lock.json
+similarity index 100%
+rename from web/package-lock.json
+rename to method-1_laptop/web/package-lock.json
+diff --git a/web/package.json b/method-1_laptop/web/package.json
+similarity index 100%
+rename from web/package.json
+rename to method-1_laptop/web/package.json
+diff --git a/web/tsconfig.json b/method-1_laptop/web/tsconfig.json
+similarity index 100%
+rename from web/tsconfig.json
+rename to method-1_laptop/web/tsconfig.json
+-- 
+2.54.0 (Apple Git-157)
+
+
+From 11615c19a9b77ae2bbe67a10bdfc0cb1842eaedb Mon Sep 17 00:00:00 2001
+From: bharathraj0643 <bharathraj0643@gmail.com>
+Date: Sun, 15 Nov 2026 19:01:41 +0530
+Subject: [PATCH 2/7] Add method-2_phone-or-tv submodule
+
+---
+ .gitmodules          | 3 +++
+ method-2_phone-or-tv | 1 +
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .gitmodules
+ create mode 160000 method-2_phone-or-tv
+
+diff --git a/.gitmodules b/.gitmodules
+new file mode 100644
+index 0000000..77b3692
+--- /dev/null
++++ b/.gitmodules
+@@ -0,0 +1,3 @@
++[submodule "method-2_phone-or-tv"]
++	path = method-2_phone-or-tv
++	url = https://github.com/bharathraj0643/stblab-phone-or-tv.git
+diff --git a/method-2_phone-or-tv b/method-2_phone-or-tv
+new file mode 160000
+index 0000000..e06aaf7
+--- /dev/null
++++ b/method-2_phone-or-tv
+@@ -0,0 +1 @@
++Subproject commit e06aaf75ea51cb4523f2831aaa10295b8b6030a7
+-- 
+2.54.0 (Apple Git-157)
+
+
+From bb2a7423339e449d4a5f79fd68cae55980b75985 Mon Sep 17 00:00:00 2001
+From: bharathraj0643 <bharathraj0643@gmail.com>
+Date: Sun, 15 Nov 2026 19:33:16 +0530
+Subject: [PATCH 3/7] added method-3_gui-recommended
+
+---
+ .gitmodules                     |  3 +++
+ README.md                       | 37 +++++++++++++++++++++++++++++++++
+ method-1_laptop/README.md       |  4 ++--
+ method-3_gui-recommended-method |  1 +
+ 4 files changed, 43 insertions(+), 2 deletions(-)
+ create mode 100644 README.md
+ create mode 160000 method-3_gui-recommended-method
+
+diff --git a/.gitmodules b/.gitmodules
+index 77b3692..5e9a7b5 100644
+--- a/.gitmodules
++++ b/.gitmodules
+@@ -1,3 +1,6 @@
+ [submodule "method-2_phone-or-tv"]
+ 	path = method-2_phone-or-tv
+ 	url = https://github.com/bharathraj0643/stblab-phone-or-tv.git
++[submodule "method-3_gui-recommended-method"]
++	path = method-3_gui-recommended-method
++	url = https://github.com/bharathraj0643/stblab-gui.git
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..42cf030
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,37 @@
++# StbLab
++
++StbLab lets you browse and tune an Airtel Xstream TV channel guide, and control the set-top box with Android TV Remote v2. This repository contains three ways to run it, from a laptop-hosted web remote to native Android TV apps.
++
++## Choose a setup
++
++| Folder | Setup | How it works | Download |
++| --- | --- | --- |
++| [`method-1_laptop`](method-1_laptop/README.md) | Laptop and browser | Runs the backend on a laptop. Open the web page from a phone or TV browser on the same network. | [releases](https://github.com/bharathraj0643/stblab/releases) |
++| [`method-2_phone-or-tv`](method-2_phone-or-tv/README.md) | Android host | Runs the backend on android host and remote client on any browser tv or phone. | [releases](https://github.com/bharathraj0643/stblab-phone-or-tv/releases) |
++| [`method-3_gui-recommended-method`](method-3_gui-recommended-method/README.md) | Native Android TV app | Runs the picker and remote controls directly as a native Android app, without a LAN web server or browser. intended to be used on android tv only, although it runs on android phone too, but ui controls are designed for a tv remote. | [releases](https://github.com/bharathraj0643/stblab-gui/releases) |
++
++See each method's README for its prerequisites, pairing steps, build instructions, and current limitations.
++
++<p align="center">
++  <img src="method-1_laptop/assets/picker.png" width="900" alt="Channel picker">
++  <img src="method-1_laptop/assets/favorites.png" width="900" alt="Favorite channels">
++  <img src="method-1_laptop/assets/set_channels.png" width="900" alt="Channel setup">
++</p>
++
++## Common notes
++
++- The Android TV Remote v2 pairing flow requires access to the TV screen to enter the code it displays.
++- The laptop and Android host setups require the client/browser and Airtel box to be reachable on the same local network.
++- The project has been tested with an Airtel Xstream set-top box. See the method-specific documentation for device and firmware details.
++- Use the software only with devices you own or are authorized to control.
++
++## Credits
++
++The project builds on ideas and protocol work from [StbLab](https://github.com/Harsh3341/stblab) and [xstream-remote](https://github.com/Vijayapardhu/xstream-remote). The relevant method documentation includes additional attribution and license details.
++
++ [Fully Kiosk Browser](https://play.google.com/store/apps/details?id=de.ozerov.fully) : best browser for tv remote navigation for this purpose of changing channels, use this browser on Android tv.
++
++  [tvQuickActions](https://play.google.com/store/apps/details?id=dev.vodik7.tvquickactions.free&pcampaignid=web_share) : use this to map advanced keycodes for Favorites button, recall previous channel button, quick launch this website from the option key button all from the physical Airtel Remote.
++
++  [atvtools on phone](https://play.google.com/store/apps/details?id=dev.vodik7.atvtools&pcampaignid=web_share) : it can be used for installing android apk on tv (since airtel box is locked), via tv adb option.
++</div>
+diff --git a/method-1_laptop/README.md b/method-1_laptop/README.md
+index ae188d8..9293538 100644
+--- a/method-1_laptop/README.md
++++ b/method-1_laptop/README.md
+@@ -12,11 +12,11 @@ credit :
+   -[https://github.com/Vijayapardhu/xstream-remote](https://github.com/Vijayapardhu/xstream-remote)
+ 
+   
+-  Note : someone should take my project and make the server and client directly on mobile itself.
+-  
+   [Fully Kiosk Browser](https://play.google.com/store/apps/details?id=de.ozerov.fully) : best browser for tv remote navigation for this purpose of changing channels, use this browser on Android tv.
+ 
+   [tvQuickActions](https://play.google.com/store/apps/details?id=dev.vodik7.tvquickactions.free&pcampaignid=web_share) : use this to map advanced keycodes for Favorites button, recall previous channel button, quick launch this website from the option key button all from the physical Airtel Remote.
++
++  [atvtools on phone](https://play.google.com/store/apps/details?id=dev.vodik7.atvtools&pcampaignid=web_share) : it can be used for installing android apk on tv (since airtel box is locked), via tv adb option.
+ </div>
+ 
+ 
+diff --git a/method-3_gui-recommended-method b/method-3_gui-recommended-method
+new file mode 160000
+index 0000000..b2b81df
+--- /dev/null
++++ b/method-3_gui-recommended-method
+@@ -0,0 +1 @@
++Subproject commit b2b81df708cd888abf29b022124a0a6c2a901ef0
+-- 
+2.54.0 (Apple Git-157)
+
+
+From fa5ee0c92b3c430cecfae1c05f9639f9e6a55ec2 Mon Sep 17 00:00:00 2001
+From: bharathraj0643 <bharathraj0643@gmail.com>
+Date: Sun, 15 Nov 2026 19:36:36 +0530
+Subject: [PATCH 4/7] added method-3_gui-recommended
+
+---
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/README.md b/README.md
+index 42cf030..234f216 100644
+--- a/README.md
++++ b/README.md
+@@ -5,7 +5,7 @@ StbLab lets you browse and tune an Airtel Xstream TV channel guide, and control
+ ## Choose a setup
+ 
+ | Folder | Setup | How it works | Download |
+-| --- | --- | --- |
++| --- | --- | --- | --- |
+ | [`method-1_laptop`](method-1_laptop/README.md) | Laptop and browser | Runs the backend on a laptop. Open the web page from a phone or TV browser on the same network. | [releases](https://github.com/bharathraj0643/stblab/releases) |
+ | [`method-2_phone-or-tv`](method-2_phone-or-tv/README.md) | Android host | Runs the backend on android host and remote client on any browser tv or phone. | [releases](https://github.com/bharathraj0643/stblab-phone-or-tv/releases) |
+ | [`method-3_gui-recommended-method`](method-3_gui-recommended-method/README.md) | Native Android TV app | Runs the picker and remote controls directly as a native Android app, without a LAN web server or browser. intended to be used on android tv only, although it runs on android phone too, but ui controls are designed for a tv remote. | [releases](https://github.com/bharathraj0643/stblab-gui/releases) |
+-- 
+2.54.0 (Apple Git-157)
+
+
+From 43d9733a176c84d80fd70e602938336bc6861da8 Mon Sep 17 00:00:00 2001
+From: bharathraj0643 <bharathraj0643@gmail.com>
+Date: Sun, 15 Nov 2026 19:40:18 +0530
+Subject: [PATCH 5/7] method-3 recommended
+
+---
+ README.md | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/README.md b/README.md
+index 234f216..ec4dbb9 100644
+--- a/README.md
++++ b/README.md
+@@ -6,9 +6,9 @@ StbLab lets you browse and tune an Airtel Xstream TV channel guide, and control
+ 
+ | Folder | Setup | How it works | Download |
+ | --- | --- | --- | --- |
+-| [`method-1_laptop`](method-1_laptop/README.md) | Laptop and browser | Runs the backend on a laptop. Open the web page from a phone or TV browser on the same network. | [releases](https://github.com/bharathraj0643/stblab/releases) |
+-| [`method-2_phone-or-tv`](method-2_phone-or-tv/README.md) | Android host | Runs the backend on android host and remote client on any browser tv or phone. | [releases](https://github.com/bharathraj0643/stblab-phone-or-tv/releases) |
+-| [`method-3_gui-recommended-method`](method-3_gui-recommended-method/README.md) | Native Android TV app | Runs the picker and remote controls directly as a native Android app, without a LAN web server or browser. intended to be used on android tv only, although it runs on android phone too, but ui controls are designed for a tv remote. | [releases](https://github.com/bharathraj0643/stblab-gui/releases) |
++| [`method-1_laptop`](https://github.com/bharathraj0643/stblab-phone-or-tv) | Laptop and browser | Runs the backend on a laptop. Open the web page from a phone or TV browser on the same network. | [releases](https://github.com/bharathraj0643/stblab/releases) |
++| [`method-2_phone-or-tv`](https://github.com/bharathraj0643/stblab-phone-or-tv) | Android host | Runs the backend on android host and remote client on any browser tv or phone. | [releases](https://github.com/bharathraj0643/stblab-phone-or-tv/releases) |
++| [`method-3_gui-recommended-method`](https://github.com/bharathraj0643/stblab-gui) | Native Android TV app | Runs the picker and remote controls directly as a native Android app, without a LAN web server or browser. intended to be used on android tv only, although it runs on android phone too, but ui controls are designed for a tv remote. | [releases](https://github.com/bharathraj0643/stblab-gui/releases) |
+ 
+ See each method's README for its prerequisites, pairing steps, build instructions, and current limitations.
+ 
+-- 
+2.54.0 (Apple Git-157)
+
+
+From d70515bb86e538d6854df80fb7d16a0c197f9102 Mon Sep 17 00:00:00 2001
+From: bharathraj0643 <bharathraj0643@gmail.com>
+Date: Sun, 15 Nov 2026 19:53:38 +0530
+Subject: [PATCH 6/7] Update submodules
+
+---
+ method-2_phone-or-tv            | 2 +-
+ method-3_gui-recommended-method | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/method-2_phone-or-tv b/method-2_phone-or-tv
+index e06aaf7..5772f09 160000
+--- a/method-2_phone-or-tv
++++ b/method-2_phone-or-tv
+@@ -1 +1 @@
+-Subproject commit e06aaf75ea51cb4523f2831aaa10295b8b6030a7
++Subproject commit 5772f09e117a3b64498fcd3519ffea1405c9f952
+diff --git a/method-3_gui-recommended-method b/method-3_gui-recommended-method
+index b2b81df..64d1892 160000
+--- a/method-3_gui-recommended-method
++++ b/method-3_gui-recommended-method
+@@ -1 +1 @@
+-Subproject commit b2b81df708cd888abf29b022124a0a6c2a901ef0
++Subproject commit 64d189239424e1312dc4f1dcc3e3141339b8bad1
+-- 
+2.54.0 (Apple Git-157)
+
+
+From 590eedfe8af1110dd2f5100bb9c466050ebfed3d Mon Sep 17 00:00:00 2001
+From: bharathraj0643 <bharathraj0643@gmail.com>
+Date: Sun, 15 Nov 2026 19:54:00 +0530
+Subject: [PATCH 7/7] update method3 recommended
+
+---
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/README.md b/README.md
+index ec4dbb9..5764dc5 100644
+--- a/README.md
++++ b/README.md
+@@ -6,7 +6,7 @@ StbLab lets you browse and tune an Airtel Xstream TV channel guide, and control
+ 
+ | Folder | Setup | How it works | Download |
+ | --- | --- | --- | --- |
+-| [`method-1_laptop`](https://github.com/bharathraj0643/stblab-phone-or-tv) | Laptop and browser | Runs the backend on a laptop. Open the web page from a phone or TV browser on the same network. | [releases](https://github.com/bharathraj0643/stblab/releases) |
++| [`method-1_laptop`](https://github.com/bharathraj0643/stblab) | Laptop and browser | Runs the backend on a laptop. Open the web page from a phone or TV browser on the same network. | [releases](https://github.com/bharathraj0643/stblab/releases) |
+ | [`method-2_phone-or-tv`](https://github.com/bharathraj0643/stblab-phone-or-tv) | Android host | Runs the backend on android host and remote client on any browser tv or phone. | [releases](https://github.com/bharathraj0643/stblab-phone-or-tv/releases) |
+ | [`method-3_gui-recommended-method`](https://github.com/bharathraj0643/stblab-gui) | Native Android TV app | Runs the picker and remote controls directly as a native Android app, without a LAN web server or browser. intended to be used on android tv only, although it runs on android phone too, but ui controls are designed for a tv remote. | [releases](https://github.com/bharathraj0643/stblab-gui/releases) |
+ 
+-- 
+2.54.0 (Apple Git-157)
+
